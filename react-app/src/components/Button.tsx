@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import Alert from "./Alert";
 
 interface ButtonProps {
   children: React.ReactNode;
@@ -18,7 +17,6 @@ interface ButtonProps {
 
 function Button({ children, onClick, color = "primary" }: ButtonProps) {
   return (
-    <Alert>My Alert</Alert>
     <button type="button" className={"btn btn-" + color} onClick={onClick}>
       {children}
     </button>

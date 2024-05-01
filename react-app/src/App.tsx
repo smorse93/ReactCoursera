@@ -13,18 +13,18 @@ const handleSelectItem = (item: string) => {
 
 function App() {
   const [alertVisible, setAlertVisibility] = useState(false);
+
   return (
     <div>
-      <Alert>
-        Hello <span>html</span> World
-      </Alert>
-
       <ListGroup
         items={items}
         headings="Cities"
         onSelectItem={handleSelectItem}
       />
-      <Button color="secondary" onClick={() => console.log("clicked")}>
+      {alertVisible && (
+        <Alert onClose={() => setAlertVisibility(false)}>Hello World</Alert>
+      )}
+      <Button color="secondary" onClick={() => setAlertVisibility(true)}>
         Primar 1
       </Button>
     </div>
